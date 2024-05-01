@@ -6,8 +6,9 @@ public class Cube : MonoBehaviour
 {
     private UniInputHook inputHook;
 
-    string message = "";
+    string message = "Activate something other than Unity window and press any key!";
     string privilegeFailedMessage = "";
+
 
     private void Awake()
     {
@@ -36,7 +37,7 @@ public class Cube : MonoBehaviour
     private void OnPrevilegeFailed(uint state)
     {
         Debug.Log("Privilege failed");
-        privilegeFailedMessage = "外部アプリでのキー入力チェックに必要な権限がありませんでした。有効にした後、アプリを再起動してください。¥nすでに有効でもこのメッセージが出る場合、環境設定から当アプリを除去した後、再度アプリを起動して有効化してください。";
+        privilegeFailedMessage = "You did not have the necessary permission to check keystrokes in external apps.\nPlease enable it and then restart the app.\nIf this message appears even if the app is already enabled, please remove this app from the OS system preferences and then launch the app again to enable it.";
     }
 
     private void OnGUI()
