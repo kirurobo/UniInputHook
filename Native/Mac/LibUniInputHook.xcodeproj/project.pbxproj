@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		73C6781B2AC8F6BF0074DC0D /* LibUniInputHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6781A2AC8F6BF0074DC0D /* LibUniInputHook.swift */; };
+		73C678272AC96E2C0074DC0D /* DebugLibUniInputHookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C678262AC96E2C0074DC0D /* DebugLibUniInputHookApp.swift */; };
+		73C678292AC96E2C0074DC0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C678282AC96E2C0074DC0D /* ContentView.swift */; };
+		73C6782B2AC96E2F0074DC0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73C6782A2AC96E2F0074DC0D /* Assets.xcassets */; };
+		73C6782E2AC96E2F0074DC0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73C6782D2AC96E2F0074DC0D /* Preview Assets.xcassets */; };
+		73C678512AC9751B0074DC0D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C678502AC9751B0074DC0D /* ContentViewModel.swift */; };
+		73C678532AC976590074DC0D /* LibUniInputHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C6781A2AC8F6BF0074DC0D /* LibUniInputHook.swift */; };
+		73C678552AC97A340074DC0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C678542AC97A340074DC0D /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		73C678132AC8F6220074DC0D /* LibUniInputHook.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibUniInputHook.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C6781A2AC8F6BF0074DC0D /* LibUniInputHook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LibUniInputHook.swift; path = LibUniInputHook/LibUniInputHook.swift; sourceTree = "<group>"; };
+		73C678242AC96E2B0074DC0D /* DebugLibUniInputHook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebugLibUniInputHook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C678262AC96E2C0074DC0D /* DebugLibUniInputHookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLibUniInputHookApp.swift; sourceTree = "<group>"; };
+		73C678282AC96E2C0074DC0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		73C6782A2AC96E2F0074DC0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		73C6782D2AC96E2F0074DC0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		73C6782F2AC96E2F0074DC0D /* DebugLibUniInputHook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DebugLibUniInputHook.entitlements; sourceTree = "<group>"; };
+		73C678502AC9751B0074DC0D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
+		73C678542AC97A340074DC0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73C678102AC8F6220074DC0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C678212AC96E2B0074DC0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		73C6780A2AC8F6220074DC0D = {
+			isa = PBXGroup;
+			children = (
+				73C6781A2AC8F6BF0074DC0D /* LibUniInputHook.swift */,
+				73C678252AC96E2C0074DC0D /* DebugLibUniInputHook */,
+				73C678142AC8F6220074DC0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		73C678142AC8F6220074DC0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73C678132AC8F6220074DC0D /* LibUniInputHook.bundle */,
+				73C678242AC96E2B0074DC0D /* DebugLibUniInputHook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73C678252AC96E2C0074DC0D /* DebugLibUniInputHook */ = {
+			isa = PBXGroup;
+			children = (
+				73C678262AC96E2C0074DC0D /* DebugLibUniInputHookApp.swift */,
+				73C678502AC9751B0074DC0D /* ContentViewModel.swift */,
+				73C678282AC96E2C0074DC0D /* ContentView.swift */,
+				73C6782A2AC96E2F0074DC0D /* Assets.xcassets */,
+				73C6782F2AC96E2F0074DC0D /* DebugLibUniInputHook.entitlements */,
+				73C6782C2AC96E2F0074DC0D /* Preview Content */,
+			);
+			path = DebugLibUniInputHook;
+			sourceTree = "<group>";
+		};
+		73C6782C2AC96E2F0074DC0D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				73C6782D2AC96E2F0074DC0D /* Preview Assets.xcassets */,
+				73C678542AC97A340074DC0D /* AppDelegate.swift */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		73C678122AC8F6220074DC0D /* LibUniInputHook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73C678172AC8F6220074DC0D /* Build configuration list for PBXNativeTarget "LibUniInputHook" */;
+			buildPhases = (
+				73C6780F2AC8F6220074DC0D /* Sources */,
+				73C678102AC8F6220074DC0D /* Frameworks */,
+				73C678112AC8F6220074DC0D /* Resources */,
+				73C6781E2AC964890074DC0D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LibUniInputHook;
+			productName = LibUniInputHook;
+			productReference = 73C678132AC8F6220074DC0D /* LibUniInputHook.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		73C678232AC96E2B0074DC0D /* DebugLibUniInputHook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73C678462AC96E2F0074DC0D /* Build configuration list for PBXNativeTarget "DebugLibUniInputHook" */;
+			buildPhases = (
+				73C678202AC96E2B0074DC0D /* Sources */,
+				73C678212AC96E2B0074DC0D /* Frameworks */,
+				73C678222AC96E2B0074DC0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DebugLibUniInputHook;
+			productName = DebugLibUniInputHook;
+			productReference = 73C678242AC96E2B0074DC0D /* DebugLibUniInputHook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73C6780B2AC8F6220074DC0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					73C678122AC8F6220074DC0D = {
+						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1500;
+					};
+					73C678232AC96E2B0074DC0D = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 73C6780E2AC8F6220074DC0D /* Build configuration list for PBXProject "LibUniInputHook" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 73C6780A2AC8F6220074DC0D;
+			productRefGroup = 73C678142AC8F6220074DC0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73C678122AC8F6220074DC0D /* LibUniInputHook */,
+				73C678232AC96E2B0074DC0D /* DebugLibUniInputHook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73C678112AC8F6220074DC0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C678222AC96E2B0074DC0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C6782E2AC96E2F0074DC0D /* Preview Assets.xcassets in Resources */,
+				73C6782B2AC96E2F0074DC0D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73C6781E2AC964890074DC0D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/*",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(PROJECT_DIR)/../../UniInputHook/Assets/Kirurobo/UniInputHook/Plugins",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -r -f $BUILT_PRODUCTS_DIR/*.bundle $PROJECT_DIR/../../UniInputHook/Assets/Kirurobo/UniInputHook/Plugins/macOS/\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		73C6780F2AC8F6220074DC0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C6781B2AC8F6BF0074DC0D /* LibUniInputHook.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73C678202AC96E2B0074DC0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73C678532AC976590074DC0D /* LibUniInputHook.swift in Sources */,
+				73C678292AC96E2C0074DC0D /* ContentView.swift in Sources */,
+				73C678272AC96E2C0074DC0D /* DebugLibUniInputHookApp.swift in Sources */,
+				73C678552AC97A340074DC0D /* AppDelegate.swift in Sources */,
+				73C678512AC9751B0074DC0D /* ContentViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		73C678152AC8F6220074DC0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		73C678162AC8F6220074DC0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		73C678182AC8F6220074DC0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kirurobo.LibUniInputHook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		73C678192AC8F6220074DC0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 0.5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kirurobo.LibUniInputHook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		73C678472AC96E2F0074DC0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DebugLibUniInputHook/DebugLibUniInputHook.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DebugLibUniInputHook/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kirurobo.DebugLibUniInputHook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		73C678482AC96E2F0074DC0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DebugLibUniInputHook/DebugLibUniInputHook.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DebugLibUniInputHook/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kirurobo.DebugLibUniInputHook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		73C6780E2AC8F6220074DC0D /* Build configuration list for PBXProject "LibUniInputHook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C678152AC8F6220074DC0D /* Debug */,
+				73C678162AC8F6220074DC0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73C678172AC8F6220074DC0D /* Build configuration list for PBXNativeTarget "LibUniInputHook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C678182AC8F6220074DC0D /* Debug */,
+				73C678192AC8F6220074DC0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73C678462AC96E2F0074DC0D /* Build configuration list for PBXNativeTarget "DebugLibUniInputHook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73C678472AC96E2F0074DC0D /* Debug */,
+				73C678482AC96E2F0074DC0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73C6780B2AC8F6220074DC0D /* Project object */;
+}
