@@ -72,13 +72,22 @@ namespace Kirurobo.UniInputHook
         /// 権限を確認し、必要ならばダイアログを開く
         /// </summary>
         /// <returns></returns>
-        public override bool GetPrivilege()
+        public override PrivilegeState GetPrivilege()
         {
             // アクセシビリティの確認をし、なければダイアログを開く
             var result = ConfirmPrivilege();
             
             // 問題ない場合は0が返ってくる
-            return (result == 0);
+            if (result == 0)
+            {
+                return PrivilegeState.Normal;
+            } else if (result == 2) {
+                // その場で権限が取得された場合（これはおそらくないはず）
+                return PrivilegeState.Permitted;
+            }
+
+            // ダイアログが開かれた場合
+            return PrivilegeState.Confirmed;
         }
 
         private protected override void StartHook() {

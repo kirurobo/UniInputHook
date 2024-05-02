@@ -8,7 +8,7 @@ namespace Kirurobo.UniInputHook
         private protected static IRawInput Instance;
 
         /// <summary>
-        /// シングルトンのインスタンス
+        /// シングルトンのインスタンスを保持
         /// </summary>
         public static IRawInput Current
         {
@@ -47,9 +47,9 @@ namespace Kirurobo.UniInputHook
         /// 実行するための権限があるか確認。必要に応じOSによるダイアログも出す
         /// </summary>
         /// <returns>権限がなく開始できなければfalseを返す</returns>
-        public virtual bool GetPrivilege()
+        public virtual PrivilegeState GetPrivilege()
         {
-            return true;
+            return PrivilegeState.Normal;
         }
 
         /// <summary>
@@ -68,19 +68,34 @@ namespace Kirurobo.UniInputHook
             Current.StopHook();
         }
 
+        /// <summary>
+        /// Start the hook
+        /// </summary>
         private protected virtual void StartHook()
         {
             UnityEngine.Debug.Log("StartCapture on IRawInput");
         }
 
+        /// <summary>
+        /// Stop the hook
+        /// </summary>
         private protected virtual void StopHook()
         {
         }
 
+        /// <summary>
+        /// キーボード操作検出時のコールバックを呼び出す
+        /// </summary>
+        /// <param name="args"></param>
         private protected void DoKeyAction(KeyboardActionArgs args)
         {
             OnKeyAction?.Invoke(args);
         }
+
+        /// <summary>
+        /// マウス操作検出時のコールバックを呼び出す
+        /// </summary>
+        /// <param name="args"></param>
         private protected void DoMouseAction(MouseActionArgs args)
         {
             OnMouseAction?.Invoke(args);
