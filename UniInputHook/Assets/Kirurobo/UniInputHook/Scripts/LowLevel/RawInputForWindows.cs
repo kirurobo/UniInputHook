@@ -73,7 +73,7 @@ namespace Kirurobo.UniInputHook
 
             IntPtr hmod = IntPtr.Zero;
 #if ENABLE_IL2CPP
-            // IL2CPP では Process.GetCurrentProcess().MainModlue.ModuleName が未定義？
+            // IL2CPP では Process.GetCurrentProcess().MainModlue.ModuleName が未定義なよう？
             // 呼ぶとプロセス名取得に失敗する
 #else
             // プロセス名を取得

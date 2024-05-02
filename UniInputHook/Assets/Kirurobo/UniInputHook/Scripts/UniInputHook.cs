@@ -17,7 +17,7 @@ namespace Kirurobo.UniInputHook
         public Action<KeyCode> OnKeyUp;
         public Action<KeyCode> OnMouseDown;
         public Action<KeyCode> OnMouseUp;
-        public Action<uint> OnPrivilegeCheckFailed;
+        public Action<bool> OnPrivilegeCheckFailed;
 
         public Action<KeyboardActionArgs> OnKeyDownArgs;
 
@@ -78,13 +78,15 @@ namespace Kirurobo.UniInputHook
             }
 
             // 有効化時には権限チェックも行う
-            if (_rawInput.GetPrivilege())
+            var privilege = _rawInput.GetPrivilege();
+            if (privilege == PrivilegeState.Normal)
             {
                 _rawInput?.Start();
             }
             else
             {
-                OnPrivilegeCheckFailed?.Invoke(1);
+                // 権限設定のダイアログが開かれた場合はtrueを渡す
+                OnPrivilegeCheckFailed?.Invoke(privilege == PrivilegeState.Confirmed);
             }
         }
 

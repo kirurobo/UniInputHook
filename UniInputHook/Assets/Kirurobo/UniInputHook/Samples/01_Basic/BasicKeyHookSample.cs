@@ -1,8 +1,10 @@
 using UnityEngine;
 using Kirurobo.UniInputHook;
-using UnityEngine.UIElements;
 
-public class Cube : MonoBehaviour
+/// <summary>
+/// キーフックの結果をOnGUIで表示する簡単なサンプル
+/// </summary>
+public class BasicKeyHookSample : MonoBehaviour
 {
     private UniInputHook inputHook;
 
@@ -10,6 +12,9 @@ public class Cube : MonoBehaviour
     string privilegeFailedMessage = "";
 
 
+    /// <summary>
+    /// Initialize the hook
+    /// </summary>
     private void Awake()
     {
         inputHook = FindObjectOfType<UniInputHook>();
@@ -17,29 +22,49 @@ public class Cube : MonoBehaviour
         //inputHook.OnKeyDown += OnKeyDown;
         inputHook.OnKeyDownArgs += OnKeyDownArgs;
 
-        inputHook.OnPrivilegeCheckFailed += OnPrevilegeFailed;
+        inputHook.OnPrivilegeCheckFailed += OnPrivilegeFailed;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
+    /// <summary>
+    /// Callback for key down event
+    /// </summary>
+    /// <param name="keyCode"></param>
     private void OnKeyDown(KeyCode keyCode)
     {
         message = $"OnKeyDown: {keyCode}";
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="key"></param>
+    private void OnKeyDown(string key)
+    {
+        Debug.Log($"OnKeyDown: {key}");
+    }
+
+    /// <summary>
+    /// Callback for key down event with args
+    /// </summary>
+    /// <param name="args"></param>
     private void OnKeyDownArgs(KeyboardActionArgs args)
     {
         message = $"{args}";
     }
 
-    private void OnPrevilegeFailed(uint state)
+    /// <summary>
+    /// Callback for privilege check failed on macOS
+    /// </summary>
+    /// <param name="isDialogOpened"></param>
+    private void OnPrivilegeFailed(bool isDialogOpened)
     {
         Debug.Log("Privilege failed");
         privilegeFailedMessage = "You did not have the necessary permission to check keystrokes in external apps.\nPlease enable it and then restart the app.\nIf this message appears even if the app is already enabled, please remove this app from the OS system preferences and then launch the app again to enable it.";
     }
 
+    /// <summary>
+    /// Show messages on the screen
+    /// </summary>
     private void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 200, 100), message);
@@ -51,18 +76,12 @@ public class Cube : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Rotate attached object to indicate the app is running
+    /// </summary>
     private void Update()
     {
         var angle = 90f * Time.deltaTime;
         this.transform.rotation *= Quaternion.AngleAxis(angle, Vector3.up);
-    }
-
-    void OnDestroy()
-    {
-    }
-
-    private void OnKeyDown(string key)
-    {
-        Debug.Log($"OnKeyDown: {key}");
     }
 }
