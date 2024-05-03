@@ -11,15 +11,30 @@ namespace Kirurobo.UniInputHook
     public class UniInputHook : MonoBehaviour, IDisposable
     {
         /// <summary>
-        /// イベントハンドラー
+        /// キー押下にのみ反応するイベントハンドラー
         /// </summary>
         public Action<KeyCode> OnKeyDown;
+
+        /// <summary>
+        /// キー解放にのみ反応するイベントハンドラー
+        /// </summary>
         public Action<KeyCode> OnKeyUp;
-        public Action<KeyCode> OnMouseDown;
-        public Action<KeyCode> OnMouseUp;
+
+        /// <summary>
+        /// キー押下、解放の両方に反応するイベントハンドラー
+        /// 引数としてイベント種類を含む情報が渡される
+        /// </summary>
+        public Action<KeyboardActionArgs> OnKeyEvent;
+
+        /// <summary>
+        /// 権限チェックに失敗した場合のイベントハンドラー
+        /// </summary>
+        /// <param name="isDialogOpened">権限設定のダイアログが開かれた場合はtrue</param>
         public Action<bool> OnPrivilegeCheckFailed;
 
-        public Action<KeyboardActionArgs> OnKeyDownArgs;
+        // マウスイベントは未実装
+        // public Action<KeyCode> OnMouseDown;
+        // public Action<KeyCode> OnMouseUp;
 
         private IRawInput _rawInput;
         private ConcurrentQueue<KeyboardActionArgs> _keyActions;
@@ -27,20 +42,25 @@ namespace Kirurobo.UniInputHook
 
         private void Awake()
         {
+            // キーイベントキューの初期化
             _keyActions = new ConcurrentQueue<KeyboardActionArgs>();
 
+            // RawInputのインスタンスを取得。なければ生成される
             _rawInput = RawInput.Current;
         }
 
         private void Start()
         {
-
-            RawInput.OnKeyAction += OnKeyAction;
+            // ネイティブで処理されるハンドラーを登録
+            RawInput.OnKeyAction += RawKeyActionHandler;
         }
 
+        /// <summary>
+        /// 毎フレームでの処理
+        /// </summary>
         private void Update()
         {
-
+            // キューに溜まったイベントがあれば処理する
             while (_keyActions.TryDequeue(out KeyboardActionArgs args))
             {
                 KeyCode key;
@@ -63,7 +83,7 @@ namespace Kirurobo.UniInputHook
                 {
                     OnKeyDown?.Invoke(key);
                 }
-                OnKeyDownArgs?.Invoke(args);
+                OnKeyEvent?.Invoke(args);
             }
         }
 
@@ -85,7 +105,8 @@ namespace Kirurobo.UniInputHook
             }
             else
             {
-                // 権限設定のダイアログが開かれた場合はtrueを渡す
+                // 権限チェックに失敗した場合のイベントを発行
+                //  権限設定のダイアログが開かれた場合はtrueを引数に渡す
                 OnPrivilegeCheckFailed?.Invoke(privilege == PrivilegeState.Confirmed);
             }
         }
@@ -106,7 +127,7 @@ namespace Kirurobo.UniInputHook
         /// ネイティブでの関数は短時間で終了するよう、キューに追加するのみ
         /// </summary>
         /// <param name="args"></param>
-        private void OnKeyAction(KeyboardActionArgs args)
+        private void RawKeyActionHandler(KeyboardActionArgs args)
         {
             _keyActions.Enqueue(args);
         }
