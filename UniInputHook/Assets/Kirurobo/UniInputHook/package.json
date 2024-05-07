@@ -1,0 +1,25 @@
+{
+    "name": "com.kirurobo.uniinputhook",
+    "version": "0.5.0",
+    "displayName": "UniInputHook",
+    "description": "Global key hook for Windows and macOS",
+    "unity": "2021.3",
+    "unityRelease": "",
+    "dependencies": {},
+    "keywords": [
+        "Windows API",
+        "macOS"
+    ],
+  "author": {
+    "name": "Kirurobo",
+    "email": "kirurobo@gmail.com",
+    "url": "https://github.com/kirurobo/uniwindowcontroller"
+  },
+  "samples": [
+    {
+      "displayName": "UniInputHook samples",
+      "description": "Sample scenes for UniInputHook",
+      "path": "Samples~"
+    }
+  ]
+}
