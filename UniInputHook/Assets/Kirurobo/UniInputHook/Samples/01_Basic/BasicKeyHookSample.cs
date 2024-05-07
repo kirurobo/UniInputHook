@@ -20,7 +20,7 @@ public class BasicKeyHookSample : MonoBehaviour
         inputHook = FindObjectOfType<UniInputHook>();
 
         //inputHook.OnKeyDown += OnKeyDown;
-        inputHook.OnKeyEvent += OnKeyDownArgs;
+        inputHook.OnKeyEvent += OnKeyEvent;
 
         inputHook.OnPrivilegeCheckFailed += OnPrivilegeFailed;
     }
@@ -38,9 +38,9 @@ public class BasicKeyHookSample : MonoBehaviour
     /// Callback for key down event with args
     /// </summary>
     /// <param name="args"></param>
-    private void OnKeyDownArgs(KeyboardActionArgs args)
+    private void OnKeyEvent(KeyboardActionArgs args)
     {
-        message = $"{args}";
+        message = $"{args}" + "\nUnity KeyCode: " + ((KeyCode)args.VkCode);
     }
 
     /// <summary>
