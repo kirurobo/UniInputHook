@@ -41,6 +41,7 @@ public class BasicKeyHookSample : MonoBehaviour
     private void OnKeyEvent(KeyboardActionArgs args)
     {
         message = $"{args}" + "\nUnity KeyCode: " + ((KeyCode)args.VkCode);
+        Debug.Log(args);
     }
 
     /// <summary>

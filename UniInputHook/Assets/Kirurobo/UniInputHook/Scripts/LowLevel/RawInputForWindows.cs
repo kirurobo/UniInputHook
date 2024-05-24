@@ -2,6 +2,7 @@ using AOT;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Unity.Plastic.Antlr3.Runtime;
 
 
 // 参考
@@ -29,7 +30,7 @@ namespace Kirurobo.UniInputHook
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
 
         [DllImport("user32.dll", SetLastError = true)]
-        private static extern IntPtr SetWindowsHookEx(WH hookId, KeyboardHookDelegate hookDelegate, IntPtr hInstance, uint threadId);
+        private static extern IntPtr SetWindowsHookEx(WH hookId, LowLevelKeyboardProc hookDelegate, IntPtr hInstance, uint threadId);
 
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -59,7 +60,7 @@ namespace Kirurobo.UniInputHook
         private bool[] pressed = new bool[256];
 
         [UnmanagedFunctionPointer(CallingConvention.Winapi)]
-        private delegate IntPtr KeyboardHookDelegate(int code , KeyboardMessage wParam, ref KBDLLHOOKSTRUCT lParam);
+        private delegate IntPtr LowLevelKeyboardProc(int code , KeyboardMessage wParam, ref KBDLLHOOKSTRUCT lParam);
 
         /// <summary>
         /// フック開始
@@ -68,7 +69,7 @@ namespace Kirurobo.UniInputHook
         {
             Stop();
 
-            KeyboardHookDelegate callback = new KeyboardHookDelegate(KeyboardHookProcedure);
+            LowLevelKeyboardProc callback = new LowLevelKeyboardProc(KeyboardHookProcedure);
             hookDelegate = GCHandle.Alloc(callback);
 
             IntPtr hmod = IntPtr.Zero;
@@ -111,19 +112,19 @@ namespace Kirurobo.UniInputHook
         /// <param name="message"></param>
         /// <param name="kbd"></param>
         /// <returns></returns>
-        [MonoPInvokeCallback(typeof(KeyboardHookDelegate))]
+        [MonoPInvokeCallback(typeof(LowLevelKeyboardProc))]
         private static IntPtr KeyboardHookProcedure(int code, KeyboardMessage message, ref KBDLLHOOKSTRUCT kbd)
         {
             if (code >= 0)
             {
                 var self = (RawInputForWindows)Current;
-                if (message == KeyboardMessage.KeyUp || message == KeyboardMessage.SysKeyUp)
+                var isDown = (message != KeyboardMessage.KeyUp && message != KeyboardMessage.SysKeyUp);
+                var isDownPrev = self.pressed[kbd.VkCode];
+
+                self.pressed[kbd.VkCode] = isDown;
+                // 以前の押下状態と異なる場合のみイベントを発火
+                if (isDown != isDownPrev)
                 {
-                    // キーが解放されれば押下フラグを下ろす
-                    self.pressed[kbd.VkCode] = false;
-                } else if (!self.pressed[kbd.VkCode]) {
-                    // キーの押下で、かつ押下フラグがまだ立っていなければ、押下イベントを発火
-                    self.pressed[kbd.VkCode] = true;
                     var args = self.CreateKeyboardActionArgs(message, kbd);
                     self.DoKeyAction(args);
                 }
