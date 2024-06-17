@@ -8,7 +8,7 @@ namespace Kirurobo.UniInputHook
     /// <summary>
     /// キーボード、マウスの操作をフォーカス外でも取得する
     /// </summary>
-    public class UniInputHook : MonoBehaviour, IDisposable
+    public class UniInputHook : MonoBehaviour
     {
         /// <summary>
         /// キー押下にのみ反応するイベントハンドラー
@@ -118,7 +118,11 @@ namespace Kirurobo.UniInputHook
         {
             _rawInput?.Stop();
         }
-        public void Dispose()
+
+        /// <summary>
+        /// 破棄時にはネイティブ部分も解放
+        /// </summary>
+        public void OnDestroy()
         {
             _rawInput?.Dispose();
         }
