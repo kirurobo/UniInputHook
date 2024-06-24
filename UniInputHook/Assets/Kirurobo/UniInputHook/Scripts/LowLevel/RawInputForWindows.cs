@@ -2,8 +2,6 @@ using AOT;
 using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using Unity.Plastic.Antlr3.Runtime;
-
 
 // 参考
 // https://github.com/malaybaku/VMagicMirror
